@@ -49,7 +49,7 @@ This is the github repository of *FALCON: Resolving Visual Redundancy and Fragme
 
 1. Clone this repository and navigate to the folder
 ```bash
-git clone git@github.com:JiuTian-VL/JiuTian-FALCON.git
+git clone git@github.com:iLearn-Lab/ICCV25-FALCON.git
 cd falcon
 ```
 
@@ -90,6 +90,10 @@ model_infer.inference(image_file, question)
 ## Evaluations
 
 See `docs/Evaluation.md` for details.
+
+## Training
+
+Please refer to the scripts in `scripts/jiutian/train`
 
 ## Citation
 

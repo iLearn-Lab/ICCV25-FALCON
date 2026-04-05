@@ -1,0 +1,7 @@
+train_datasets:
+  BLIP_LAION_CC_SBU_558K:
+    data_path: 'llava_pretrain/blip_laion_cc_sbu_558k.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+eval_datasets: null

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+deepspeed --include localhost:0,1,2,3 --master_port 29577 jiutian/train/train_mem.py \
+    --deepspeed ./scripts/zero1.json \
+    --model_name_or_path /path/to/pretrain \
+    --freeze_backbone False \
+    --version llama_3_1 \
+    --vision_tower /data1/Models/siglip-large-patch16-384 \
+    --projector_type mlp2x_gelu \
+    --visual_feature_type query \
+    --num_vision_queries 64 \
+    --visual_enable_interact_attn False \
+    --processor_image_size 384 \
+    --processor_anchors 'grid_16' \
+    --processor_enable_low_res True \
+    --data_config scripts/jiutian/train/pretrain-stage2.yaml \
+    --is_multimodal True \
+    --tune_vision2text True \
+    --freeze_vision_tower False \
+    --unfreeze_vision_interact_attn False \
+    --unfreeze_vision_self_attn False \
+    --seed 42 \
+    --bf16 True \
+    --output_dir /path/to/save \
+    --save_safetensors False \
+    --num_train_epochs 1 \
+    --per_device_train_batch_size 2 \
+    --per_device_eval_batch_size 4 \
+    --gradient_accumulation_steps 32 \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 500 \
+    --save_total_limit 2 \
+    --learning_rate 2e-5 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --tf32 True \
+    --model_max_length 2048 \
+    --gradient_checkpointing False \
+    --dataloader_num_workers 16 \
+    --report_to tensorboard

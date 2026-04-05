@@ -1,0 +1,17 @@
+train_datasets:
+  SHARE_GPT_4V:
+    data_path: 'share-captioner_coco_lcs_sam_1246k_1107.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  ALLAVA_CAPTION_469K:
+    data_path: 'ALLaVA-Caption-LAION-4V.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  SYNTHDOG_EN_500K:
+    data_path: 'synthdog-en.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+eval_datasets: null

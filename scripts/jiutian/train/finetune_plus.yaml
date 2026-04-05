@@ -1,0 +1,104 @@
+train_datasets:
+  # ======== llava ========
+  LLAVA_V1_5_WO_DOC_GROUNDING_428K:
+    data_path: 'llava_v1_5/llava_v1_5_wo_textvqa_ocrvqa_grounding_instruct.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  # ======== doc & ocr ========
+  OCR_VQA_80K:
+    data_path: 'llava_v1_5/llava_ocrvqa_instruct.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.4
+
+  DOC_DOWNSTREAM_UNIQUE_440K:
+    data_path: 'DocDownstream-1.0/train_llava_unique.json'
+    image_folder: '/data2/Datasets/DocDownstream-1.0'
+    type: llava_hr
+
+  DOC_STRUCT_4M_PARSE:
+    data_path: 'DocStruct4M/struct_aware_parse_llava.json'
+    image_folder: '/data2/Datasets/DocStruct4M'
+    type: llava_hr
+    subsample: 0.033
+
+  # ======== caption ========
+  SHAREGPT4V_CAP100K:
+    data_path: 'sharegpt4v_instruct_gpt4-vision_cap100k.json'
+    image_folder: '/data2/Datasets/ShareGPT4V/data'
+    type: llava_hr
+
+  # ======== science ========
+  SCIENCE_MIX_46K:
+    data_path: 'science_mix46k_ai2d_sqa_iconqa.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  # ======== dialogue ========
+  ALLAVA_INSTRUCT_LAION_468K:
+    data_path: 'ALLaVA-Instruct-LAION-4V.json'
+    image_folder: '/data2/Datasets/ALLaVA-4V'
+    type: llava_hr
+    subsample: 0.5
+
+  # ======== grounding ========
+  # 24.5k * 2
+  REFCOCO_REC_REG:
+    data_path: [
+      'shikra/rec_refcoco.json',
+      'shikra/reg_refcoco.json',
+    ]
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  # 149k
+  SPOT_CAPTION_FLICKR30K:
+    data_path: 'shikra/spotcap_flickr.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.67
+
+  # 213k
+  VCR_BCoT:
+    data_path: 'shikra/vcr-q-ra.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.4
+
+  # 1742K
+  OBJECTS365:
+    data_path: 'objects365/object365_train.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.1
+
+  # ======== text ========
+  ALLAVA_TEXT_143K:
+    data_path: 'Evol-Instruct-GPT4-Turbo-143K.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.4
+
+  # ======== math ========
+
+  # filter 178K
+  MATHV360K_FILTER_178K:
+    data_path: 'math/MathV360K_filter.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  # 23K
+  TABMWP_COT:
+    data_path: 'math/TabMWP_w_solution.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+  # 395K
+  MATHQA_395K:
+    data_path: 'math/MathQA-395K.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.1
+
+eval_datasets: null

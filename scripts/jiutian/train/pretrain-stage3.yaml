@@ -1,0 +1,30 @@
+train_datasets:
+  ALLAVA_CAPTION_469K:
+    data_path: 'ALLaVA-Caption-LAION-4V.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.5
+
+  DOCSTRUCT4M_PARSE:
+    data_path: 'DocStruct4M/struct_aware_parse_llava.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.13
+
+  DOCSTRUCT4M_GROUNDING:
+    data_path: 'DocStruct4M/multi_grained_text_localization_llava.json'
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+    subsample: 0.1
+
+  ARCANA_FULLANNO_MIX:
+    data_path: [
+      'Arcana_VG_COCO/dense_captions.json',  # 86k
+      'Arcana_VG_COCO/fine_grained_object.json',  # 86k
+      'Arcana_VG_COCO/region_captions.json',  # 86k
+      'Arcana_VG_COCO/ocrs.json'  # 13k
+    ]
+    image_folder: '/data2/Datasets'
+    type: llava_hr
+
+eval_datasets: null
